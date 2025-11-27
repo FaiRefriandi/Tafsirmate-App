@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "845496260485",
+    "project_id": "tafsirmate",
+    "storage_bucket": "tafsirmate.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:845496260485:android:b27873b71519eb12e496ec",
+        "android_client_info": {
+          "package_name": "com.froztlass.tafsirmate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "845496260485-l00sed6ui5t3j6hre7fgruoevafdfbaf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.froztlass.tafsirmate",
+            "certificate_hash": "a331dff027118a4f58f02494a1dc677c4f95eae6"
+          }
+        },
+        {
+          "client_id": "845496260485-qgn7vc0gqmgevrcnkhkps10s6mokdm7b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCHpP3lpKzJWcFlOSGW4xmEvIas76srGdI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "845496260485-qgn7vc0gqmgevrcnkhkps10s6mokdm7b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

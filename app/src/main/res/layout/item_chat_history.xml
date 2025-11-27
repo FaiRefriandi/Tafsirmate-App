@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardChatItem"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="5dp"
+    android:layout_marginHorizontal="12dp"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="0dp"
+    app:strokeColor="@color/transparent"
+    app:cardBackgroundColor="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/chatTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Judul Riwayat Chat"
+            android:fontFamily="@font/googlesans_medium"
+            android:textSize="16sp"
+            android:textColor="@color/semi_dark"
+            android:maxLines="1"
+            android:ellipsize="end" />
+
+        <!-- <TextView
+             android:id="@+id/chatTimestamp"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:text="11 Juli 2025, 14:33"
+             android:textSize="12sp"
+             android:textColor="@android:color/darker_gray"
+             android:layout_marginTop="6dp" />
+         -->
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Bluefy</string>
+    <string name="surah_number">Surah Number</string>
+    <string name="surah_name">Surah Name</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="default_web_client_id">845496260485-qgn7vc0gqmgevrcnkhkps10s6mokdm7b.apps.googleusercontent.com</string>
+
+</resources>

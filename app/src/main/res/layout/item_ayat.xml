@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="20dp"
+    android:layout_marginStart="12dp"
+    android:layout_marginEnd="12dp"
+    card_view:cardCornerRadius="20dp"
+    card_view:cardElevation="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Nomor Ayat -->
+        <TextView
+            android:id="@+id/tvAyatNumber"
+            android:fontFamily="@font/medium"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:layout_gravity="start"/>
+
+        <!-- Teks Arab -->
+        <TextView
+            android:id="@+id/tvAyatText"
+            android:fontFamily="@font/amiri_regular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ"
+            android:textSize="25sp"
+            android:textDirection="rtl"
+            android:textAlignment="viewEnd"
+            android:gravity="end"
+            android:padding="8dp"/>
+
+        <!-- Latin -->
+        <TextView
+            android:id="@+id/tvAyatLatin"
+            android:fontFamily="@font/regular"
+            android:textColor="@color/ijogelap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bismillahirrahmanirrahim"
+            android:textSize="14sp"
+            android:textStyle="italic"
+            android:paddingTop="4dp"/>
+
+        <!-- Terjemahan -->
+        <TextView
+            android:id="@+id/tvAyatTerjemahan"
+            android:fontFamily="@font/dmsans_regular"
+            android:textColor="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dengan nama Allah Yang Maha Pengasih, Maha Penyayang."
+            android:textSize="13sp"
+            android:paddingTop="4dp"/>
+
+        <!-- Tombol AI -->
+        <android.widget.ImageButton
+            android:id="@+id/btnAI"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/tanya_ai"
+            android:background="@android:color/transparent" />
+
+        <!-- Tampilkan hasil dari AI -->
+        <TextView
+            android:id="@+id/tvAiResponse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="13sp"
+            android:textColor="@android:color/black"
+            android:paddingTop="4dp"
+            android:visibility="gone"
+            android:fontFamily="@font/regular" />
+
+        <!-- Tombol untuk membacakan teks respon -->
+        <Button
+            android:id="@+id/btnSpeak"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🗣️ Dengarkan"
+            android:backgroundTint="@color/semi_dark"
+            android:fontFamily="@font/dmsans_medium"
+            android:drawablePadding="8dp"
+            android:layout_marginTop="8dp"
+            android:visibility="gone"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"/>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

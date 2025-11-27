@@ -1,0 +1,31 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="8dp"
+    android:gravity="start">
+
+    <ImageView
+        android:id="@+id/imgBotAvatar"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginRight="5dp"
+        android:src="@drawable/ic_bot_avatar"
+        android:clipToOutline="true"
+        android:background="@drawable/bg_profile_circle"
+        android:scaleType="centerCrop" />
+
+    <TextView
+        android:id="@+id/tvBotMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_bot_bubble"
+        android:textColor="@color/semi_dark"
+        android:padding="10dp"
+        android:textDirection="ltr"
+        android:gravity="start"
+        android:textSize="15dp"
+        android:textAlignment="inherit"
+        android:text="Halo, ada yang bisa saya bantu?"
+        android:fontFamily="@font/googlesans_regular" />
+</LinearLayout>

@@ -1,0 +1,304 @@
+@startuml
+class com.froztlass.tafsirmate.model.BotViewModel$Companion {
+-  CHAT_HISTORY_KEY
+}
+
+class com.froztlass.tafsirmate.model.BotViewModel {
++ MutableList<Pair<String, Boolean>> chatHistory
++ <<Create>> BotViewModel(SavedStateHandle)
++ void addMessage(String,Boolean)
+}
+
+
+class com.froztlass.tafsirmate.model.ApiResponse {
++ <<Create>> ApiResponse(,Int,,String,,Surat)
+}
+
+class com.froztlass.tafsirmate.onboarding.screens.SecondScreen {
++ View? onCreateView(LayoutInflater,ViewGroup?,Bundle?)
+}
+
+class com.froztlass.tafsirmate.SplashFragment {
+- FragmentSplashBinding? _binding
+-  binding
++ View onCreateView(LayoutInflater,ViewGroup?,Bundle?)
++ void onViewCreated(View,Bundle?)
+- Boolean onBoardingFinished()
++ void onDestroyView()
+}
+
+
+interface com.froztlass.tafsirmate.api.EquranApiService {
++ Call<SurahResponse> getSuratList()
++ Call<ApiResponse> getSurah(Int)
+}
+
+class com.froztlass.tafsirmate.MainActivity {
+-  requestAudioPermission
++ void onCreate(Bundle?)
+- String performHeavyOperation()
+- void updateUI(String)
+- void setStatusBarIconColor(Boolean)
+- Boolean isLightBackground(Int)
+- void showPermissionDeniedDialog()
+- void openAppSettings()
+}
+
+
+class com.froztlass.tafsirmate.ProfileFragment {
+- FragmentProfileBinding? _binding
+-  binding
+- FirebaseAuth auth
+- GoogleSignInClient googleSignInClient
+- SharedPreferences sharedPref
++ View onCreateView(LayoutInflater,ViewGroup?,Bundle?)
++ void onViewCreated(View,Bundle?)
++ void onDestroyView()
+}
+
+
+class com.froztlass.tafsirmate.ChatHistoryFragment {
+- RecyclerView recyclerView
+- ChatAdapter chatAdapter
+- FirebaseFirestore firestore
+- String userId
++ void onCreateView(void,LayoutInflater,ViewGroup?,void,Bundle?)
++ void null()
++ void onViewCreated(View,Bundle?)
+- void loadChatHistory()
+}
+
+
+class com.froztlass.tafsirmate.HomeFragment {
+- FragmentHomeBinding? _binding
+-  binding
+- SuratAdapter suratAdapter
+- HomeViewModel homeViewModel
+- AyatAdapter ayatAdapter
+- List<Surat> allSuratList
+-  doubleBackToExitPressedOnce
+- Surat? currentSurat
++ View onCreateView(LayoutInflater,ViewGroup?,Bundle?)
++ void onViewCreated(View,Bundle?)
+- void showSurahDetails(Surat)
+- void filterSurat(String?)
+- void filterSurat2(String?)
++ void onDestroyView()
+}
+
+
+class com.froztlass.tafsirmate.adapter.AyatAdapter$Companion {
+-  VIEW_TYPE_HEADER
+-  VIEW_TYPE_AYAT
+}
+
+class com.froztlass.tafsirmate.adapter.AyatAdapter$HeaderViewHolder {
+- TextView tvNamaSurat
+- TextView tvNamaLatin
+- TextView tvTempatTurun
+- TextView tvJumlahAyat
+- TextView tvArti
++ <<Create>> HeaderViewHolder(View)
++ void bind(Surat)
+}
+
+
+class com.froztlass.tafsirmate.adapter.AyatAdapter$AyatViewHolder {
++ <<Create>> AyatViewHolder(View,Context)
+}
+
+class com.froztlass.tafsirmate.adapter.AyatAdapter {
+-  ayatList
+- Surat? surat
++ void submitData(Surat)
++ Int getItemCount()
++ Int getItemViewType(Int)
++ RecyclerView.ViewHolder onCreateViewHolder(ViewGroup,Int)
++ void onBindViewHolder(RecyclerView.ViewHolder,Int)
++ void null()
+}
+
+
+class com.froztlass.tafsirmate.onboarding.ViewPagerFragment {
++ View? onCreateView(LayoutInflater,ViewGroup?,Bundle?)
++ void onViewCreated(View,Bundle?)
+}
+
+class com.froztlass.tafsirmate.api.EquranRepository {
+- EquranApiService api
++ void getSuratList((List<Surat>?) -> Unit)
++ void getSurahDetail(Int,(Surat?) -> Unit)
+}
+
+
+class com.froztlass.tafsirmate.MenuFragment {
+- FragmentMenuBinding? _binding
+-  binding
+-  homeFragment
+-  botFragment
+-  profileFragment
+- Fragment activeFragment
++ View onCreateView(LayoutInflater,ViewGroup?,Bundle?)
+- void setupBottomNavigation()
++ void onViewCreated(View,Bundle?)
+- void showFragment(Fragment)
++ void onDestroyView()
+}
+
+
+class com.froztlass.tafsirmate.model.Surat {
++ <<Create>> Surat(,Int,,String,,String,,Int,,String,,String,,String,,Map<String, String>,,List<Ayat>,,Any?,Any?)
+}
+
+class com.froztlass.tafsirmate.model.Ayat {
++ <<Create>> Ayat(,Int,,Int,,String,,String,,String?,,String,,Map<String, String>)
+}
+
+class com.froztlass.tafsirmate.model.ChatItem {
++ <<Create>> ChatItem(,String,,String)
+}
+
+class com.froztlass.tafsirmate.onboarding.screens.FirstScreen {
++ View? onCreateView(LayoutInflater,ViewGroup?,Bundle?)
+}
+
+class com.froztlass.tafsirmate.DetailFragment {
+- Int? surahNumber
+- String? surahName
+- FragmentDetailBinding binding
+- AyatAdapter ayatAdapter
++ void onCreateView(void,LayoutInflater,ViewGroup?,void,Bundle?)
++ void null()
++ void onViewCreated(View,Bundle?)
+- void loadSurahDetail()
+}
+
+
+class com.froztlass.tafsirmate.adapter.ChatAdapter {
++ <<Create>> ChatAdapter(,List<ChatItem>,,(String) -> Unit)
+}
+
+class com.froztlass.tafsirmate.adapter.ChatViewHolder {
++ TextView titleText
++ <<Create>> ChatViewHolder(View)
+}
+
+
+class com.froztlass.tafsirmate.BotFragment {
+-  client
+-  apiKey
+- LinearLayout chatLayout
+- ScrollView scrollView
+- EditText inputText
+- ImageButton sendButton
+- ImageButton micButton
+- LinearLayout inputContainer
+- TextView greetingText
+- TextView welcomeMessage
+- SpeechRecognizer speechRecognizer
+- TextToSpeech textToSpeech
+- ChipGroup chipGroup
+- BotViewModel viewModel
+-  messageHistory
+-  isUserScrolling
+-  isVoiceInput
+-  lastScrollY
+- LinearLayout suggestionContainer
+- String? currentChatId
+-  isFromHistory
+-  isSuggestionVisible
+-  isAnimatingSuggestion
++ void onCreateView(void,LayoutInflater,ViewGroup?,void,Bundle?)
++ void null()
++ void onInit(Int)
+- void setGreetingMessage()
+- String getGreetingMessage()
+- void restoreChatHistory()
+- void showInitialSuggestions()
+- void adjustInputPosition(View)
+- void addMessageBubble(String,Boolean)
+- String removeMarkdown(String)
+- String generateChatId()
+- void sendMessageToOpenAI(String,Boolean)
+- void addBotAvatarMessage(String)
+- void startSpeechRecognition()
+- void speakText(String)
+- void slideDown(View,(() -> Unit)?)
+- void slideUp(View,(() -> Unit)?)
+- void loadChatMessages(String,View)
+- void updateSuggestionChips(List<String>,String)
+}
+
+
+class com.froztlass.tafsirmate.onboarding.screens.ThirdScreen {
+- FragmentThirdScreenBinding? _binding
+-  binding
+- GoogleSignInClient googleSignInClient
+- FirebaseAuth auth
+-  googleSignInLauncher
++ View onCreateView(LayoutInflater,ViewGroup?,Bundle?)
+- void signInWithGoogle()
+- void firebaseAuthWithGoogle(String)
+- void saveUserToFirestore(FirebaseUser)
++ void onDestroyView()
+}
+
+
+class com.froztlass.tafsirmate.adapter.SuratAdapter {
++ <<Create>> SuratAdapter((Surat) -> Unit)
+}
+
+class com.froztlass.tafsirmate.adapter.SuratViewHolder {
++ <<Create>> SuratViewHolder(ItemSuratBinding)
+}
+
+class com.froztlass.tafsirmate.onboarding.ViewPagerAdapter {
++ <<Create>> ViewPagerAdapter(,ArrayList<Fragment>,,FragmentManager,,Lifecycle)
+}
+
+class com.froztlass.tafsirmate.HomeViewModel {
+-  _suratList
++ LiveData<List<Surat>> suratList
+-  _ayatList
++ LiveData<List<Ayat>> ayatList
++ void loadSuratList()
++ void loadAyatList(Int)
+}
+
+
+class com.froztlass.tafsirmate.model.SurahResponse {
++ <<Create>> SurahResponse(,Int,,String,,List<Surat>)
+}
+
+
+
+com.froztlass.tafsirmate.model.BotViewModel +.. com.froztlass.tafsirmate.model.BotViewModel$Companion
+androidx.lifecycle.ViewModel <|-- com.froztlass.tafsirmate.model.BotViewModel
+androidx.fragment.app.Fragment <|-- com.froztlass.tafsirmate.onboarding.screens.SecondScreen
+androidx.fragment.app.Fragment <|-- com.froztlass.tafsirmate.SplashFragment
+androidx.appcompat.app.AppCompatActivity <|-- com.froztlass.tafsirmate.MainActivity
+androidx.fragment.app.Fragment <|-- com.froztlass.tafsirmate.ProfileFragment
+androidx.fragment.app.Fragment <|-- com.froztlass.tafsirmate.ChatHistoryFragment
+androidx.fragment.app.Fragment <|-- com.froztlass.tafsirmate.HomeFragment
+com.froztlass.tafsirmate.adapter.AyatAdapter +.. com.froztlass.tafsirmate.adapter.AyatAdapter$Companion
+com.froztlass.tafsirmate.adapter.AyatAdapter +.. com.froztlass.tafsirmate.adapter.AyatAdapter$HeaderViewHolder
+com.froztlass.tafsirmate.adapter.ViewHolder <|-- com.froztlass.tafsirmate.adapter.AyatAdapter$HeaderViewHolder
+com.froztlass.tafsirmate.adapter.AyatAdapter +.. com.froztlass.tafsirmate.adapter.AyatAdapter$AyatViewHolder
+com.froztlass.tafsirmate.adapter.ViewHolder <|-- com.froztlass.tafsirmate.adapter.AyatAdapter$AyatViewHolder
+
+
+com.froztlass.tafsirmate.adapter.Adapter <|-- com.froztlass.tafsirmate.adapter.AyatAdapter
+androidx.fragment.app.Fragment <|-- com.froztlass.tafsirmate.onboarding.ViewPagerFragment
+androidx.fragment.app.Fragment <|-- com.froztlass.tafsirmate.MenuFragment
+androidx.fragment.app.Fragment <|-- com.froztlass.tafsirmate.onboarding.screens.FirstScreen
+androidx.fragment.app.Fragment <|-- com.froztlass.tafsirmate.DetailFragment
+com.froztlass.tafsirmate.adapter.ViewHolder <|-- com.froztlass.tafsirmate.adapter.ChatViewHolder
+androidx.fragment.app.Fragment <|-- com.froztlass.tafsirmate.BotFragment
+com.froztlass.tafsirmate.OnInitListener <|.. com.froztlass.tafsirmate.BotFragment
+androidx.fragment.app.Fragment <|-- com.froztlass.tafsirmate.onboarding.screens.ThirdScreen
+
+
+
+
+androidx.lifecycle.ViewModel <|-- com.froztlass.tafsirmate.HomeViewModel
+@enduml
