@@ -2,9 +2,13 @@
 
 Tafsirmate is a mobile application designed to help users learn basic Qur'an interpretation (tafsir) using an AI-powered assistant. The app provides a simple interface to read surahs, view ayat details, and interact with an AI chatbot for explanations.
 
+<img width="1983" height="3600" alt="walktrought" src="https://github.com/user-attachments/assets/538c22d1-4fc7-4c4b-8c64-1df1a2afe7ff" /> <img width="1983" height="3600" alt="Detal Surat" src="https://github.com/user-attachments/assets/8e09be2e-e24d-4704-ac30-256f91a01723" /><img width="1983" height="3600" alt="home" src="https://github.com/user-attachments/assets/785cc60e-a511-4c28-bd0e-04b4a5adb6f7" /><img width="1983" height="3600" alt="Kecerdasan Buatan" src="https://github.com/user-attachments/assets/dc1ffd62-0148-4dcc-bb12-e8780b657948" />
+ets/b845d555-65a2-43d2-8688-e00479739023" />
+
 ## Overview
 
-This project is built using native Android development.  
+This project is built using native Android development.
+
 Key features include:
 - Surah and ayat listing
 - Detailed ayat view
